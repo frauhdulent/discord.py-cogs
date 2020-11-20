@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 # You can change 'x' to anything.
-class x(commands.Cog):
+class Moderation(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -37,6 +37,6 @@ class x(commands.Cog):
             await ctx.send(f"{(ctx.message.author.mention)} This user wasn't banned to begin with.")
 
 def setup(client):
-    client.add_cog(x(client)) # Remember based on which name you assigned your class for,
+    client.add_cog(Moderation(client)) # Remember based on which name you assigned your class for,
                         # It should be used at the end of the setup function right.
                         # eg:- client.add_cog(x(client)), client.add_cog(y(client)), client.add_cog(z(client))
