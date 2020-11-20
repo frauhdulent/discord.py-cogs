@@ -23,9 +23,9 @@ class Moderation(commands.Cog):
     @commands.command()
     @commands.has_permissions(ban_members=True)
     async def unban(self, ctx, id: int):
-    user = await client.fetch_user(id)
-    await ctx.guild.unban(user)
-    await ctx.send(f'{user} has been unbanned.')
+        user = await client.fetch_user(id)
+        await ctx.guild.unban(user)
+        await ctx.send(f'{user} has been unbanned.')
     
     # Unban error:
     @unban.error
