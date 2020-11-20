@@ -7,7 +7,7 @@ PREFIX = ['BOT PREFIX'] # Variable for storing the bots prefix. eg:- !, ?, +, -
 client = commands.Bot(command_prefix = PREFIX) # Using the value stored in variable 'PREFIX'
 client.remove_command("help") # This could be useful if you're planning on making a custom help command down the line.
 
-cogs = ['cogs.x', 'cogs.y', 'cogs.z'] # 'cogs' signifies the name of the folder, 'x' signifies the file name.
+cogs = ['cogs.fun', 'cogs.mod', 'cogs.misc'] # 'cogs' signifies the name of the folder, 'x' signifies the file name.
 
 # You can also change the bot's discord activity, its not necessary but if you want it maybe useful down the line.
 # Not that its mandatory but it maybe useful down the line.
