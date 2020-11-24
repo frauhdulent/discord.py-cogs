@@ -18,29 +18,6 @@ class Moderation(commands.Cog):
         if isinstance(error, commands.MissingRequiredArgument):
             # You can customize what is said by the bot in the f strings:
             await ctx.send(f'{(ctx.message.author.mention)} User is not defined.')
-    
-    # Unban command:
-    @commands.command()
-    @commands.has_permissions(ban_members=True)
-    async def unban(ctx, *, member):
-      banned_users = await ctx.guild.bans()
-      member_name, member_discriminator = member.split('#')
-
-      for ban_entry in banned_users:
-          user = ban_entry.banned_users
-
-          if (user.name, user.discriminator) == (member_name, member_discriminator):
-              await ctx.guild.unban(user)
-    
-    # Unban error:
-    @unban.error
-    async def unban_error(self, ctx, error):
-        if isinstance(error, commands.BadArgument):
-            # You can customize what is said by the bot in the f strings:
-            await ctx.send(f'{(ctx.message.author.mention)} Wrong user.')
-        if isinstance(error, commands.CommandInvokeError):
-            # You can customize what is said by the bot in the f strings:
-            await ctx.send(f"{(ctx.message.author.mention)} This user wasn't banned to begin with.")
 
 def setup(client):
     client.add_cog(Moderation(client)) # Remember based on which name you assigned your class for,
